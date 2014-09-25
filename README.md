@@ -3,9 +3,12 @@ VagrantBoilerPlate
 
 ## ローカルに必要な環境
 - VirtualBox 4.3.16 以上
+	* [VirtualBoxのダウンロードページ](https://www.virtualbox.org/wiki/Downloads)
 - Vagrant 1.6.5 以上
+	* [Vagrantのダウンロードページ](https://www.vagrantup.com/downloads.html)
 
 ```sh
+$ vagrant plugin install vagrant-omnibus
 $ vagrant plugin list
 
 vagrant-login (1.0.1, system)
