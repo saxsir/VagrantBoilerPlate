@@ -1,0 +1,18 @@
+SHELL=/bin/bash
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+
+MAILTO=root
+
+HOME=/
+
+# run-parts
+
+# cron.daily内のジョブを毎日4:02に実行
+02 4 * * * root [ ! -f /etc/cron.hourly/0anacron ] && run-parts /etc/cron.daily
+
+# cron.weekly内のジョブを毎週4:22に実行
+22 4 * * 0 root [ ! -f /etc/cron.hourly/0anacron ] && run-parts /etc/cron.weekly
+
+# cron.monthly内のジョブを毎月4:42に実行
+42 4 1 * * root [ ! -f /etc/cron.hourly/0anacron ] && run-parts /etc/cron.monthly

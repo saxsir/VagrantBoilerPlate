@@ -1,0 +1,28 @@
+*filter
+
+# 参考
+# http://qiita.com/shimohiko/items/ec672655edb84578a82e
+# http://www.websec-room.com/2014/01/12/1511
+
+# 外からのすべての通信を受け付けないようにする
+:INPUT DROP [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT ACCEPT [0:0]
+
+# 確立済みの通信は通してやる
+-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+# pingは通してやる
+-A INPUT -p icmp -j ACCEPT
+
+# ループバックは通してやる
+-A INPUT -i lo -j ACCEPT
+
+# SSHは通してやる
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
+
+# http, mysqlも通す
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT
+
+COMMIT

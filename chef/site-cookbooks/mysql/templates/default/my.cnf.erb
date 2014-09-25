@@ -1,0 +1,28 @@
+# 文字コードの設定
+# http://www.webcyou.com/?p=4718
+[client]
+default-character-set=utf8
+
+[mysqld]
+datadir=/var/lib/mysql
+socket=/var/lib/mysql/mysql.sock
+
+# Disabling symbolic-links is recommended to prevent assorted security risks
+symbolic-links=0
+# Recommended in standard MySQL setup
+sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
+
+skip-character-set-client-handshake
+character-set-server = utf8
+collation-server = utf8_general_ci
+init-connect = SET NAMES utf8
+
+[mysqld_safe]
+log-error=/var/log/mysqld.log
+pid-file=/var/run/mysqld/mysqld.pid
+
+[mysqldump]
+default-character-set=utf8
+
+[mysql]
+default-character-set=utf8
