@@ -26,7 +26,11 @@ $ vim Vagrantfile
 $ vagrant up
 ```
 
-### ssh
+### 動作確認
+
+ブラウザで[http://192.168.33.10/phpinfo.php](http://192.168.33.10/phpinfo.php)にアクセスしてPHPの設定ページが見えればたぶん大丈夫。
+
+### サーバーにログイン
 ```sh
 $ vagrant ssh #vagrantユーザーはsudoできる
 ```
