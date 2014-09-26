@@ -8,12 +8,14 @@ VagrantBoilerPlate
 	* [Vagrantのダウンロードページ](https://www.vagrantup.com/downloads.html)
 
 ```sh
+$ vagrant plugin install vagrant-vbguest
 $ vagrant plugin install vagrant-omnibus
 $ vagrant plugin list
 
 vagrant-login (1.0.1, system)
-vagrant-omnibus (1.4.1)
+vagrant-omnibus (1.4.1) #VM環境に自動でchefをインストールするのに必要
 vagrant-share (1.1.1, system)
+vagrant-vbguest (0.10.0) #自動的にGuest Additionsを更新してくれるプラグイン
 ```
 
 ## 使い方
